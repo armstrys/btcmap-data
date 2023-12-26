@@ -1,7 +1,5 @@
 /.idea
 .DS_Store
-country-data-import/output/btcmap-areas-10m/-99.json
-country-data-import/output/btcmap-areas-10m/-99.json
-country-data-import/output/btcmap-areas-50m/.json
-country-data-import/output/btcmap-areas-50m/.json
-country-data-import/output/btcmap-areas-10m/-99.json
+.env
+country-data-import/output/*/-99.json
+country-data-import/output/*/.json

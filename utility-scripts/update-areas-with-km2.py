@@ -3,20 +3,13 @@
 import requests
 import json
 import sys
-import os
 from area import area as area_calc
-
-# Get the bearer token from the environment variable
-btcmap_api_token = os.getenv("BTCMAP_API_TOKEN")
-
-if not btcmap_api_token:
-    print("Please set the BTCMAP_API_TOKEN environment variable.")
-    sys.exit(1)
+from btcmap_api_token import BTCMAP_API_TOKEN
 
 # Define the API URL to fetch all areas
 url = "https://api.btcmap.org/areas"
 headers = {
-    'Authorization': f'Bearer {btcmap_api_token}',
+    'Authorization': f'Bearer {BTCMAP_API_TOKEN}',
     'Content-Type': 'application/json'
 }
 

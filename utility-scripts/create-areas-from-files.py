@@ -2,13 +2,8 @@ import requests
 import json
 import sys
 import os
+from btcmap_api_token import BTCMAP_API_TOKEN
 
-# Get the bearer token from the environment variable
-btcmap_api_token = os.getenv("BTCMAP_API_TOKEN")
-
-if not btcmap_api_token:
-    print("Please set the BTCMAP_API_TOKEN environment variable.")
-    sys.exit(1)
 
 # Set the working directory to the script's directory
 script_directory = os.path.dirname(os.path.abspath(__file__))
@@ -30,7 +25,7 @@ for filename in os.listdir(data_directory):
         # Define the API URL and headers
         url = "https://api.btcmap.org/areas"
         headers = {
-            'Authorization': f'Bearer {btcmap_api_token}',
+            'Authorization': f'Bearer {BTCMAP_API_TOKEN}',
             'Content-Type': 'application/json'
         }
 

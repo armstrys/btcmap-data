@@ -4,18 +4,13 @@ import sys
 import os
 from area import area
 from geojson_rewind import rewind
-from python_rclone import Rclone
+from rclone import RClone
+from btcmap_api_token import BTCMAP_API_TOKEN
+
 
 # Set the working directory to the script's directory
 script_directory = os.path.dirname(os.path.abspath(__file__))
 os.chdir(script_directory)
-
-# Get the bearer token from the environment variable
-btcmap_api_token = os.getenv("BTCMAP_API_TOKEN")
-
-if not btcmap_api_token:
-    print("Please set the BTCMAP_API_TOKEN environment variable.")
-    sys.exit(1)
 
 # Define your variables
 # Empty variables will be ignored and will not create empty elements in the JSON
@@ -124,7 +119,7 @@ print(json_payload)
 #Send the query to the BTC Map API to create the area
 url = "https://api.btcmap.org/areas"
 headers = {
-    'Authorization': f'Bearer {btcmap_api_token}',
+    'Authorization': f'Bearer {BTCMAP_API_TOKEN}',
     'Content-Type': 'application/json'
 }
 response = requests.post(url, headers=headers, data=json_payload)
