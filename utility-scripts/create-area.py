@@ -131,7 +131,7 @@ if response.status_code == 200:
     # Now upload area icon
 
     # Initialize Rclone with the remote configuration name
-    rclone = Rclone()
+    rclone = RClone()
 
     # Define the source (local) and destination (remote)
     source = script_directory+alias+"."+icon_type

@@ -1,6 +1,5 @@
 import requests
 import json
-import sys
 import os
 from btcmap_api_token import BTCMAP_API_TOKEN
 
