@@ -5,3 +5,4 @@ geojson-rewind
 geopandas
 h3
 python-rclone
+python-dotenv
